@@ -6,14 +6,47 @@ namespace calculate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the first number:");
-            double num1 = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter the second number:");
-            double num2 = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter the operator (+, -, *, /):");
-            char op = char.Parse(Console.ReadLine());
+            double num1, num2;
+            char op;
+            bool validInput = false;
+            do
+            {
+                Console.WriteLine("Enter the first number:");
+                if (double.TryParse(Console.ReadLine(), out num1))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+            } while (!validInput);
+            validInput = false;
+            do
+            {
+                Console.WriteLine("Enter the second number:");
+                if (double.TryParse(Console.ReadLine(), out num2))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+            } while (!validInput);
+            validInput = false;
+            do
+            {
+                Console.WriteLine("Enter the operator (+, -, *, /):");
+                if (char.TryParse(Console.ReadLine(), out op))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid operator.");
+                }
+            } while (!validInput);
 
             double result = Program.Calculate(num1, num2, op);
 
