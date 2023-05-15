@@ -11,6 +11,8 @@ namespace calculate
             bool validInput = false;
             do
             {
+                Console.WriteLine("Welcome to my programm!");
+
                 Console.WriteLine("Enter the first number:");
                 if (double.TryParse(Console.ReadLine(), out num1))
                 {
