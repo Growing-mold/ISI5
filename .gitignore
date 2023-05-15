@@ -1,1 +1,4 @@
 calculate.csproj
+*.suo
+calculate.dll
+calculate.pdb
